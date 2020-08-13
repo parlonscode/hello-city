@@ -2,11 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Hello City{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <main role="main">
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer>
+            <p>
+                &copy; Copyright {{ 'now'|date('Y') }}
+                &middot; <a href="{{ path('app_about') }}">About Us</a>
+            </p>
+        </footer>
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>
