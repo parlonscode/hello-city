@@ -13,9 +13,6 @@ class PagesController extends AbstractController
      */
     public function home(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/PagesController.php',
-        ]);
+        return $this->render('pages/home.html.twig');
     }
 }
