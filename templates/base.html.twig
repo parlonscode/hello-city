@@ -13,10 +13,13 @@
         <footer>
             <p>
                 &copy; Copyright {{ 'now'|date('Y') }}
-                &middot; <a href="{{ path('app_about') }}">About Us</a>
+
+                {% if app.request.attributes.get('_route') == 'app_home' %}
+                    &middot; <a href="{{ path('app_about') }}">About Us</a>
+                {% endif %}
             </p>
         </footer>
-        
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
